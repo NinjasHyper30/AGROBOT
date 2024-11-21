@@ -20,7 +20,7 @@ float Vx,Vy,gam;  //required speed of the BOT
 float ld;         //half of track
 float lf;       
 float lr;      //wheel base lf+lr
-
+float R=0.05;       //radius of wheel
 void MC_ISR();
 void getRoverSpeed();
 void getOmega();

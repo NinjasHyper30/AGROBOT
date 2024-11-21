@@ -18,7 +18,7 @@ void getOmega()
         
         //calculating angular velocity
         double r=(V[0]*V[0])+(V[1]*V[1]);
-        wRef[i]=sqrt(r);
+        wRef[i]=sqrt(r)/R;
         ///calculating steer angle
         if(wRef[i]==0)
         {
