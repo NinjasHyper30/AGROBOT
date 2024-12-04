@@ -1,6 +1,18 @@
 void getRoverSpeed()
 {
     
+    const float Wm=4.0;          //max wheel speed rad/sec
+    float v1=abs(Vx)+ld*abs(gam);
+    float v2=abs(Vy)+lf*abs(gam);
+    float w=sqrt(v1*v1+v2*v2)/R;  //max wheel speed for cur config
+    //maintain wheel speed below 4 rad/sec
+    if(w>Wm)
+    {
+        float c=1;
+        c=w/Wm;
+        Vx/=c; Vy/=c; gam/=c;    
+    }
+
 }
 void getOmega()
 {

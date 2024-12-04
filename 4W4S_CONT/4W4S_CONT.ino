@@ -11,9 +11,9 @@ float Vdc=Vm-1.7;
 double kw=3468.6; //encoder costant
 float Ts=0.05; //sampling time
 
-double w[4];   //current value of wheel speed
-double wRef[4];   //driving angles
-int delta[4];    //steerMotor angles
+volatile double w[4];   //current value of wheel speed
+volatile double wRef[4];   //driving angles
+volatile int delta[4];    //steerMotor angles
 
 volatile bool state=true;
 float Vx,Vy,gam;  //required speed of the BOT
@@ -41,7 +41,6 @@ void setup()
   // initializing timers for pwm freq
   TCCR2B = TCCR2B & B11111000 | B00000001;
   TCCR4B = TCCR4B & B11111000 | B00000001;
-  TCCR3B = TCCR3B & B11111000 | B00000001;
   //initializing timer interrupt
   Timer1.initialize(50000);
   Timer1.attachInterrupt(MC_ISR);
