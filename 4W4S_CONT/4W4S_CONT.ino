@@ -17,6 +17,7 @@ volatile int delta[4];    //steerMotor angles
 
 volatile bool state=true;
 float Vx,Vy,gam;  //required speed of the BOT
+float x=0,y=0,phi=0;
 float ld;         //half of track
 float lf;       
 float lr;      //wheel base lf+lr
